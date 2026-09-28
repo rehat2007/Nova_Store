@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Nova — Responsive
+   Mobile-first base lives in style.css / components.css.
+   Breakpoints here layer on progressively richer layouts.
+   ========================================================================== */
+
+/* ---- Tablet: 600px+ ---- */
+@media (min-width: 600px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .field-row--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .field-row--3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .cart-item {
+    grid-template-columns: 140px 1fr;
+  }
+
+  .cart-item__media {
+    width: 140px;
+  }
+}
+
+/* ---- Laptop: 900px+ ---- */
+@media (min-width: 900px) {
+  .navbar__links {
+    display: flex;
+  }
+
+  .navbar__toggle {
+    display: none;
+  }
+
+  .navbar__search-form {
+    display: flex;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1.1fr 1fr;
+  }
+
+  .hero__visual {
+    order: 2;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .product-detail {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-7);
+  }
+
+  .cart-layout {
+    grid-template-columns: 1.7fr 1fr;
+  }
+
+  .checkout-layout {
+    grid-template-columns: 1.5fr 1fr;
+    display: grid;
+    gap: var(--space-7);
+    align-items: start;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+  }
+}
+
+/* ---- Desktop: 1200px+ ---- */
+@media (min-width: 1200px) {
+  .container {
+    padding-inline: var(--space-6);
+  }
+
+  .hero {
+    padding-top: var(--space-8);
+  }
+}
+
+/* ---- Small phones: tighten spacing ---- */
+@media (max-width: 380px) {
+  .product-grid {
+    gap: var(--space-3) var(--space-2);
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+}

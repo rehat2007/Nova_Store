@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova — Modern essentials, made for your everyday</title>
+  <meta name="description" content="Nova is a modern fashion store selling t-shirts, hoodies, shoes, and accessories designed for comfort, confidence, and everyday style." />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <button type="button" class="btn-icon navbar__toggle" data-menu-open aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
+      <a href="index.html" class="navbar__logo">Nova</a>
+
+      <nav class="navbar__links" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <form class="navbar__search-form" data-search-form role="search" aria-label="Search products" onsubmit="return false;">
+          <label for="nav-search" class="visually-hidden">Search products</label>
+          <input type="search" id="nav-search" data-shop-search placeholder="Search Nova…" />
+        </form>
+        <button type="button" class="btn-icon" data-nav-search aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </button>
+        <a href="cart.html" class="btn-icon" aria-label="View cart">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+          <span class="cart-badge" data-cart-badge>0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Mobile menu ===== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__scrim" data-menu-scrim></div>
+    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <button type="button" class="btn-icon mobile-menu__close" data-menu-close aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <nav class="mobile-menu__links" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main" class="page-enter">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <span class="eyebrow">Nova — Fall Collection</span>
+          <h1>Modern essentials for your everyday.</h1>
+          <p>Discover timeless pieces designed for comfort, confidence, and everyday style — cut from honest materials and built to last past one season.</p>
+          <div class="hero__actions">
+            <a href="#shop" class="btn btn-primary">Shop Collection</a>
+            <a href="#categories" class="btn btn-secondary">Explore Categories</a>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="500" fill="#E9ECE2"/>
+            <path d="M140 110 L200 80 L260 110 L300 150 L270 195 L235 172 L235 400 L165 400 L165 172 L130 195 L100 150 Z"
+                  fill="none" stroke="#17171B" stroke-width="3" stroke-linejoin="round" opacity="0.85"/>
+            <circle cx="200" cy="60" r="18" fill="none" stroke="#17171B" stroke-width="3" opacity="0.6"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Featured Categories ===== -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Browse</span>
+            <h2>Shop by category</h2>
+          </div>
+        </div>
+        <div class="category-grid" data-categories-grid></div>
+      </div>
+    </section>
+
+    <!-- ===== Shop ===== -->
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Full Collection</span>
+            <h2>Shop Nova</h2>
+          </div>
+          <p data-result-count class="result-count">16 products</p>
+        </div>
+
+        <div class="toolbar">
+          <div class="filter-pills" role="group" aria-label="Filter by category" data-filter-pills>
+            <button type="button" class="filter-pill" data-filter-pill="All" aria-pressed="true">All</button>
+            <button type="button" class="filter-pill" data-filter-pill="T-Shirts" aria-pressed="false">T-Shirts</button>
+            <button type="button" class="filter-pill" data-filter-pill="Hoodies" aria-pressed="false">Hoodies</button>
+            <button type="button" class="filter-pill" data-filter-pill="Shoes" aria-pressed="false">Shoes</button>
+            <button type="button" class="filter-pill" data-filter-pill="Accessories" aria-pressed="false">Accessories</button>
+          </div>
+
+          <div class="toolbar__row">
+            <div class="field" style="margin-bottom:0; max-width: 260px; flex: 1;">
+              <label for="shop-search" class="visually-hidden">Search products</label>
+              <input type="search" id="shop-search" data-shop-search placeholder="Search products…" />
+            </div>
+            <div class="select-field">
+              <label for="sort-select" class="visually-hidden">Sort by</label>
+              <select id="sort-select" data-sort-select>
+                <option value="featured">Sort by: Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Rating</option>
+                <option value="name-asc">Name: A-Z</option>
+                <option value="name-desc">Name: Z-A</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-grid" data-shop-grid aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="section section--tight" id="about">
+      <div class="container hero__grid" style="align-items:center;">
+        <div class="hero__visual" aria-hidden="true" style="order:2;">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="400" fill="#F0EEE7"/>
+            <rect x="70" y="70" width="260" height="260" fill="none" stroke="#17171B" stroke-width="2" opacity="0.5"/>
+            <circle cx="200" cy="200" r="70" fill="none" stroke="#54603D" stroke-width="3"/>
+          </svg>
+        </div>
+        <div>
+          <span class="eyebrow">About Nova</span>
+          <h2 style="margin-bottom: 1.2rem;">Fewer, better things.</h2>
+          <p>Nova started with a simple frustration: most "essentials" wear out after a season. We work with a small number of mills to source heavier cottons and cleaner constructions, then keep the designs quiet enough to wear for years, not weeks.</p>
+          <p style="margin-top: 1rem;">Every piece is designed in-house, tested on our own team first, and priced to reflect the materials — not a marketing budget.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <p class="site-footer__brand">Nova</p>
+          <p>Modern essentials. Made for your everyday.</p>
+        </div>
+        <div class="site-footer__col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#shop">All Products</a></li>
+            <li><a href="#" data-category-link="T-Shirts">T-Shirts</a></li>
+            <li><a href="#" data-category-link="Hoodies">Hoodies</a></li>
+            <li><a href="#" data-category-link="Shoes">Shoes</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>© 2026 Nova. Portfolio demo project — not a real store.</span>
+        <span>Built with HTML, CSS &amp; JavaScript.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" data-back-to-top aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/storage.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Render the four featured category cards from shared product/category data.
+    document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.querySelector("[data-categories-grid]");
+      const icons = {
+        "T-Shirts": '<path d="M35 22 L50 14 L65 22 L78 30 L70 45 L58 38 L58 88 L42 88 L42 38 L30 45 L22 30 Z" fill="none" stroke="#17171B" stroke-width="2.4"/>',
+        Hoodies: '<path d="M30 28 C30 18 70 18 70 28 L76 25 L84 38 L74 46 L74 88 L26 88 L26 46 L16 38 L24 25 Z" fill="none" stroke="#17171B" stroke-width="2.4"/>',
+        Shoes: '<path d="M18 66 L18 56 C18 51 23 49 28 47 L48 41 C53 39 55 33 61 33 C66 33 66 39 71 41 L83 47 C86 49 88 52 88 56 L88 66 Z" fill="none" stroke="#17171B" stroke-width="2.4"/>',
+        Accessories: '<path d="M28 44 L28 36 C28 26 72 26 72 36 L72 44" fill="none" stroke="#17171B" stroke-width="2.4"/><rect x="20" y="44" width="60" height="46" rx="6" fill="none" stroke="#17171B" stroke-width="2.4"/>',
+      };
+
+      window.Nova.Products.CATEGORIES.forEach(({ label, tagline }) => {
+        const card = document.createElement("a");
+        card.href = "#shop";
+        card.className = "category-card";
+        card.dataset.categoryLink = label;
+        card.innerHTML = `
+          <div class="category-card__media">
+            <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#EEF0E7"/>${icons[label]}</svg>
+          </div>
+          <div class="category-card__body">
+            <h3>${label}</h3>
+            <span>${tagline}</span>
+          </div>`;
+        grid.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>

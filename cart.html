@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart — Nova</title>
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <button type="button" class="btn-icon navbar__toggle" data-menu-open aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
+      <a href="index.html" class="navbar__logo">Nova</a>
+
+      <nav class="navbar__links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#categories">Categories</a>
+        <a href="index.html#about">About</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <form class="navbar__search-form" role="search" aria-label="Search products" action="index.html" method="get">
+          <label for="nav-search" class="visually-hidden">Search products</label>
+          <input type="search" id="nav-search" name="search" placeholder="Search Nova…" />
+        </form>
+        <a href="index.html#shop" class="btn-icon" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </a>
+        <a href="cart.html" class="btn-icon" aria-label="View cart" aria-current="page">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+          <span class="cart-badge" data-cart-badge>0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Mobile menu ===== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__scrim" data-menu-scrim></div>
+    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <button type="button" class="btn-icon mobile-menu__close" data-menu-close aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <nav class="mobile-menu__links" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#categories">Categories</a>
+        <a href="index.html#about">About</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main" class="page-enter">
+    <div class="container section--tight" style="padding-top: var(--space-5);">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span aria-hidden="true">/</span>
+        <span aria-current="page">Cart</span>
+      </nav>
+
+      <h1 style="margin-bottom: var(--space-6); font-size: 2.2rem;">Shopping Cart</h1>
+
+      <!-- Empty state -->
+      <div class="empty-state" data-cart-empty hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+        <h3>Your cart is empty.</h3>
+        <p>Looks like you haven't added anything yet.</p>
+        <a href="index.html#shop" class="btn btn-primary">Start Shopping</a>
+      </div>
+
+      <!-- Cart contents -->
+      <div class="cart-layout" data-cart-layout hidden>
+        <div>
+          <ul data-cart-items></ul>
+        </div>
+
+        <aside class="summary-card" aria-label="Order summary">
+          <h2 style="font-size: 1.2rem; margin-bottom: var(--space-4);">Order Summary</h2>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span data-cart-subtotal>$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span data-cart-shipping>$0.00</span>
+          </div>
+          <p class="free-shipping-note" data-free-shipping-note></p>
+          <div class="summary-row summary-row--total">
+            <span>Total</span>
+            <span data-cart-total>$0.00</span>
+          </div>
+          <a href="checkout.html" class="btn btn-primary btn-block" style="margin-top: var(--space-4);">Proceed to Checkout</a>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__bottom">
+        <span>© 2026 Nova. Portfolio demo project — not a real store.</span>
+        <span>Built with HTML, CSS &amp; JavaScript.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

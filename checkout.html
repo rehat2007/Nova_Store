@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Nova</title>
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <button type="button" class="btn-icon navbar__toggle" data-menu-open aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
+      <a href="index.html" class="navbar__logo">Nova</a>
+
+      <nav class="navbar__links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#categories">Categories</a>
+        <a href="index.html#about">About</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="cart.html" class="btn-icon" aria-label="View cart">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+          <span class="cart-badge" data-cart-badge>0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Mobile menu ===== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__scrim" data-menu-scrim></div>
+    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <button type="button" class="btn-icon mobile-menu__close" data-menu-close aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <nav class="mobile-menu__links" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a href="index.html#shop">Shop</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main" class="page-enter">
+    <div class="container" style="padding-top: var(--space-5);">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span aria-hidden="true">/</span>
+        <a href="cart.html">Cart</a><span aria-hidden="true">/</span>
+        <span aria-current="page">Checkout</span>
+      </nav>
+
+      <!-- ===== Checkout form ===== -->
+      <div data-checkout-view>
+        <h1 style="margin-bottom: var(--space-6); font-size: 2.2rem;">Checkout</h1>
+
+        <div class="checkout-layout">
+          <form data-checkout-form novalidate>
+            <div class="checkout-section">
+              <h2>Contact Information</h2>
+              <div class="field-row field-row--2">
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" autocomplete="email" required />
+                  <p class="field-error" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" required />
+                  <p class="field-error" role="alert"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="checkout-section">
+              <h2>Shipping Information</h2>
+              <div class="field">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" autocomplete="name" required />
+                <p class="field-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" autocomplete="street-address" required />
+                <p class="field-error" role="alert"></p>
+              </div>
+              <div class="field-row field-row--3">
+                <div class="field">
+                  <label for="city">City</label>
+                  <input type="text" id="city" name="city" autocomplete="address-level2" required />
+                  <p class="field-error" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="postalCode">Postal Code</label>
+                  <input type="text" id="postalCode" name="postalCode" autocomplete="postal-code" required />
+                  <p class="field-error" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="country">Country</label>
+                  <input type="text" id="country" name="country" autocomplete="country-name" required />
+                  <p class="field-error" role="alert"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="checkout-section" style="border-bottom: none;">
+              <h2>Payment</h2>
+              <p style="margin-bottom: var(--space-4); font-size: 0.85rem;">This is a frontend demo — no payment information is sent or processed anywhere.</p>
+              <div class="field">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" placeholder="1234 5678 9012 3456" autocomplete="cc-number" required />
+                <p class="field-error" role="alert"></p>
+              </div>
+              <div class="field-row field-row--2">
+                <div class="field">
+                  <label for="cardExpiry">MM/YY</label>
+                  <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/YY" autocomplete="cc-exp" required />
+                  <p class="field-error" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="cardCvv">CVV</label>
+                  <input type="text" id="cardCvv" name="cardCvv" inputmode="numeric" placeholder="123" autocomplete="cc-csc" required />
+                  <p class="field-error" role="alert"></p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="cardName">Cardholder Name</label>
+                <input type="text" id="cardName" name="cardName" autocomplete="cc-name" required />
+                <p class="field-error" role="alert"></p>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+          </form>
+
+          <aside class="summary-card" aria-label="Order summary">
+            <h2 style="font-size: 1.2rem; margin-bottom: var(--space-4);">Order Summary</h2>
+            <div data-order-summary></div>
+            <div class="summary-row" style="margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--color-line);">
+              <span>Subtotal</span>
+              <span data-checkout-subtotal>$0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span data-checkout-shipping>$0.00</span>
+            </div>
+            <div class="summary-row summary-row--total">
+              <span>Total</span>
+              <span data-checkout-total>$0.00</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- ===== Confirmation ===== -->
+      <div class="confirmation" data-confirmation-view hidden>
+        <div class="confirmation__icon">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for shopping with Nova. Your order has been successfully placed and a confirmation has been sent to your email.</p>
+        <span class="confirmation__order-id">Order # <strong data-order-id></strong></span>
+        <div>
+          <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__bottom">
+        <span>© 2026 Nova. Portfolio demo project — not a real store.</span>
+        <span>Built with HTML, CSS &amp; JavaScript.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
